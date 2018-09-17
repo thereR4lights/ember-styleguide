@@ -43,6 +43,10 @@ module.exports = {
     return mergeTrees([bootstrapTree, tree]);
   },
 
+  treeForPublic: function() {
+    return new Funnel(path.join(this.root, 'public'));
+  },
+
   getBootstrapStylesPath() {
     let pkgPath = path.dirname(require.resolve(`bootstrap/package.json`));
     return path.join(pkgPath, 'scss');
